@@ -22,7 +22,13 @@ public class ReflectionTest {
 		method.invoke(person, "Lynn");
 		System.out.println(person.name);
 		
+		Constructor<Person> cons1 = clazz.getDeclaredConstructor(String.class);
+		cons1.setAccessible(true);
+		Person privatePerson = (Person)cons1.newInstance("Zhao");
+		System.out.println(privatePerson);
 		
-		
+		Method privateMethod = clazz.getDeclaredMethod("showPersonality", String.class);
+		privateMethod.setAccessible(true);
+		privateMethod.invoke(privatePerson, "shy");
 	}
 }
