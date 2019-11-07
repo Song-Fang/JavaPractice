@@ -13,7 +13,11 @@ class Person{
 	int age;
 	String name;
 	static String gender = "male";
-
+	
+	public Person(String name,int age) {
+		this.name = name;
+		this.age = age;
+	}
 	public int getAge() {
 		return age;
 	}
@@ -36,5 +40,9 @@ class Person{
 	
 	static {
 		System.out.println("Hello,Static Block");
+	}
+	
+	public String toString() {
+		return "name:"+name+",age:"+age+",gender:"+gender;
 	}
 }
