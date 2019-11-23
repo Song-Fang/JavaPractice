@@ -10,10 +10,16 @@ public class Block {
 
 
 class Person{
+	
+	
 	int age;
 	String name;
 	static String gender = "male";
 	
+	
+	public Person() {
+		
+	}
 	
 	private Person(String name) {
 		this.name = name;

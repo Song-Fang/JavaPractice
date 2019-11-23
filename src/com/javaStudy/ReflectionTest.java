@@ -31,4 +31,34 @@ public class ReflectionTest {
 		privateMethod.setAccessible(true);
 		privateMethod.invoke(privatePerson, "shy");
 	}
+	
+	@Test
+	public void reflectionTest2() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+		//First
+		Person person = new Person();
+		Class clazz = person.getClass();
+		System.out.println(clazz);
+		
+		//Second
+		Class clazz2 = Person.class;
+		Person person2 = (Person) clazz2.newInstance();
+		System.out.println(clazz2);
+		System.out.println(clazz==clazz2);
+		System.out.println(person2);
+		
+		//Third
+		Class clazz3 = Class.forName("com.javaStudy.Person");
+		System.out.println(clazz3);
+		System.out.println(clazz3==clazz2);
+		
+		//Fourth
+		ClassLoader classLoader = ReflectionTest.class.getClassLoader();
+		Class clazz4 = classLoader.loadClass("com.javaStudy.Person");
+		System.out.println(clazz4);	
+		
+		
+		
+	}
+	
+	
 }
