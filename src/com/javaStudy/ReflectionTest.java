@@ -62,7 +62,8 @@ public class ReflectionTest {
 	public void reflectionTest3() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		
 		String path;
-
+		System.out.println(path);
+		
 		for (int i = 0; i < 100; i++) {
 			int num = new Random().nextInt(3);
 			switch (num) {
